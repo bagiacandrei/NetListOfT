@@ -25,9 +25,9 @@ namespace NetListOfT
             Console.WriteLine("\nCount :{0}", bands.Count());//nr de elemente din lista
                  
             Console.WriteLine();
-            //bands.Add(new MyList() { Name = "Abba", StudioAlbums = 20, Genre = "Soft Rock", Country = "SUA" });//adaugarea unui element la sfarsitul listei;
+            //adaugarea unui element la sfarsitul listei;
             var formatie = new MyList() { Name = "Abba", StudioAlbums = 20, Genre = "Soft Rock", Country = "SUA" };
-            bands.Add(formatie);
+            bands.Add(formatie);//adaugarea unui element la sfarsitul listei;
 
             foreach (MyList band in bands)
             {
@@ -47,7 +47,7 @@ namespace NetListOfT
 
             Console.WriteLine("\nCount :{0}", bands.Count());
 
-            Console.WriteLine("_______");
+            Console.WriteLine("________________");
             foreach (MyList band in bands)
                 Console.WriteLine(band.Name + " " + band.StudioAlbums + " " + band.Genre + " "+band.Country);
         }
