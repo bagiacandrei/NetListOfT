@@ -20,11 +20,11 @@ namespace NetListOfT
             Console.WriteLine(list[1].ToString());
                 Console.WriteLine("\nCount :{0}", list.Count);//nr de elemente din lista
                 if (list.Contains(2))
-                    Console.WriteLine("It works");
+                    Console.WriteLine("Contains works");
                 list2 = list.FindAll(2);
-              Console.WriteLine(list2[1].ToString());
-            //foreach(MyList<int> x in list)
-               // Console.WriteLine(x.ToString());
+              Console.WriteLine("FindAll function: {0}",list2[1].ToString());
+            //foreach(MyList<int> item in list)
+               // Console.WriteLine(item.ToString());
            } 
         
         }

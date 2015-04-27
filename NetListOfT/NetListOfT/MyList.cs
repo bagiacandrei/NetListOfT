@@ -1,57 +1,89 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-/*namespace NetListOfT
+
+namespace NetListOfT
 {
-    public class MyList 
+     class MyList<T>
     {
-        
         private int index;
+        private T[] memory;
+        
+         
         public MyList()
         {
             index = 0;
+            memory = new T[index];
+            
             
         }
-       
         public int Count { get { return index; } }
-        public void Add(MyList item)
+        public void Add(T item)
         {
-
-            item.Add(new MyList());
+            T[] copy = new T[index];
+            copy = this.memory;
+            memory = null;
+            memory=new T[index+1];
+            for (int i = 0; i < index; i++)
+                memory[i] = copy[i];
+            this.memory[index] = item;
+            index++;
         }
-       /* public MyList this[int index]
+        public T this[int index]
         {
-            get { return this[index]; }
+            get { return memory[index]; }
             set
             {
                 if (index < 0 || index > Count)
                     throw new ArgumentOutOfRangeException("!!!");
             }
         }
-        public bool Equals(MyList item)
+         public void Clear()
         {
-            if (this.Name == item.Name && this.StudioAlbums == item.StudioAlbums && this.Genre == item.Genre && this.Country == item.Country)
-                return true;
-            else
-                return false;
+            memory = null;
+            index = 0;
+            memory = new T[index];
         }
-        public bool Contains(MyList item)
-        {
-            if (item.Contains(new MyList()))
-                return true;
-            else
-                return false;
-        }
+         public bool Contains(T item)
+         {
+             for(int i=0;i<index;i++)
+             {    
+                 System.Collections.Generic.EqualityComparer<T> c=System.Collections.Generic.EqualityComparer<T>.Default;//habar nu am cei astaaaa
+                 
+                 if (c.Equals(memory[i],item))
+                     return true;           
+             }
+             return false;
+         }
+         public void RemoveAt(int position)
+         {
+             T[] copy = new T[index];
+             copy = this.memory;
+             memory = null;
+             memory = new T[index - 1];
+             for (int i =0 ; i < position; i++)
+                     memory[i] = copy[i];
+             for (int i = position; i < index - 1; i++)
+                 memory[i] = copy[i + 1];
+                 
+             index--;
+         }
+         public MyList<T> FindAll(T item)
+         {
+             MyList<T> list = new MyList<T>();
+             
+             for (int i = 0; i < index; i++)
+                 {
+                     System.Collections.Generic.EqualityComparer<T> c = System.Collections.Generic.EqualityComparer<T>.Default;
 
+                     if (c.Equals(memory[i], item))
+            
+                     list.Add(memory[i]);
+                 }
+             return list;
 
-        public override string ToString()
-        {
-            return "Name: " + Name + ", Studio Albums: " + StudioAlbums + ", Genre:" + Genre + ", Country:" + Country;
-        }
-        
+         }        
     }
-
-}*/
+}
