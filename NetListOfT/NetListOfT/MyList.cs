@@ -4,37 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-namespace NetListOfT
+/*namespace NetListOfT
 {
-    public class MyList:IEquatable<MyList>
+    public class MyList 
     {
-        public string Name { get; set; }
-        public int StudioAlbums { get;  set; }
-        public string Genre { get;  set; }
-        public string Country { get; set; }
-
+        
+        private int index;
         public MyList()
-        { }
-        public MyList(string name, int studioAlbums, string genre, string country)
         {
-            Name = name;
-            StudioAlbums = studioAlbums;
-            Genre = genre;
-            Country = country;
+            index = 0;
+            
         }
-        public int Count { get {return Count;} }
+       
+        public int Count { get { return index; } }
         public void Add(MyList item)
         {
 
             item.Add(new MyList());
         }
-        public MyList this[int index]
+       /* public MyList this[int index]
         {
-            get { return this[index]; } 
-            set{
-                  if(index<0||index>Count)
-                           throw new ArgumentOutOfRangeException("!!!");  
-                } 
+            get { return this[index]; }
+            set
+            {
+                if (index < 0 || index > Count)
+                    throw new ArgumentOutOfRangeException("!!!");
+            }
         }
         public bool Equals(MyList item)
         {
@@ -42,19 +37,21 @@ namespace NetListOfT
                 return true;
             else
                 return false;
-            }
-       public bool Contains(MyList item)
-        {
-           if(item.Contains(new MyList()))
-               return true;
-           else
-               return false;
         }
-       
+        public bool Contains(MyList item)
+        {
+            if (item.Contains(new MyList()))
+                return true;
+            else
+                return false;
+        }
+
+
         public override string ToString()
         {
-            return "Name: " +Name  + ", Studio Albums: " + StudioAlbums+", Genre:"+Genre+", Country:"+Country;
+            return "Name: " + Name + ", Studio Albums: " + StudioAlbums + ", Genre:" + Genre + ", Country:" + Country;
         }
-       
+        
     }
-}
+
+}*/

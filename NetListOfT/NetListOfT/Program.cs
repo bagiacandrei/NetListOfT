@@ -10,8 +10,21 @@ namespace NetListOfT
     {
         public static void Main()
         {
-            List<MyList> bands = new List<MyList>();
-           bands.Add(new MyList() { Name = "Led Zeppelin", StudioAlbums = 9, Genre = "Hard Rock", Country = "England" });
+            MyList <int> list = new MyList<int>();
+            MyList<int> list2 = new MyList<int>();
+            list.Add(2);
+            //list.Clear();
+            list.Add(10);
+            list.Add(2);
+            list.RemoveAt(1);
+            Console.WriteLine(list[1].ToString());
+                Console.WriteLine("\nCount :{0}", list.Count);//nr de elemente din lista
+                if (list.Contains(2))
+                    Console.WriteLine("coooor");
+                list2 = list.FindAll(2);
+              Console.WriteLine(list2[1].ToString());
+
+           /*bands.Add(new MyList() { Name = "Led Zeppelin", StudioAlbums = 9, Genre = "Hard Rock", Country = "England" });
            bands.Add(new MyList() { Name = "Judas Priest", StudioAlbums = 17, Genre = "Heavy Metal", Country = "England" });
            bands.Add(new MyList() { Name = "Phoenix", StudioAlbums = 10, Genre = "Rock", Country = "Romania" });
            bands.Add(new MyList() { Name = "Black Sabbath", StudioAlbums = 19, Genre = "Heavy Metal", Country = "England" });
@@ -50,8 +63,10 @@ namespace NetListOfT
             Console.WriteLine("________________");
             foreach (MyList band in bands)
                 Console.WriteLine(band.Name + " " + band.StudioAlbums + " " + band.Genre + " "+band.Country);
-        }
+        */}
 
+        
+            
         
         }
     }

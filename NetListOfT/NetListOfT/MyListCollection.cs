@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NetListOfT
 {
-    public class MyListCollection : Collection<MyList>
+    /*public class MyListCollection : Collection<MyList>
     {
         public MyListCollection(IEnumerable<MyList> bands) : base(bands.ToList()) { }
         protected override void RemoveItem(int index)
@@ -27,7 +27,7 @@ namespace NetListOfT
         {
             base.ClearItems();
         }
-    }
+    }*/
 
 
 
